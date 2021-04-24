@@ -9,6 +9,9 @@ public class Anagrams {
 
     }
     static boolean isAnagram(String a, String b) {
+        if (a.length() != b.length())
+            return  false;
+
         char[] arrayA = a.toLowerCase().toCharArray();
         char[] arrayB = b.toLowerCase().toCharArray();
 
@@ -16,14 +19,14 @@ public class Anagrams {
         Arrays.sort(arrayB);
 
         for (int i = 0 ; i < arrayA.length; i++) {
-            if (arrayA[i] == arrayB[i] && arrayA.length == arrayB.length) {
-                System.out.println("Anagrams");
-                return true;
-            }
 
+            if ((arrayA[i] != arrayB[i])) {
+                System.out.println("Not anagrams");
+                return false;
+            }
         }
-        System.out.println("Not Anagrams");
-        return false;
+        System.out.println("Anagrams");
+        return true;
 
     }
 }
