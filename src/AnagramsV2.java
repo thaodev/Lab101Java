@@ -4,10 +4,10 @@ public class AnagramsV2 {
         String b = "marganaa";
         boolean result = isAnagram(a, b);
         if (result) {
-            System.out.println("Not Anagrams");
+            System.out.println("Anagrams");
         }
         else {
-            System.out.println("Anagrams");
+            System.out.println("Not Anagrams");
         }
     }
     static boolean isAnagram(String a, String b) {
@@ -19,7 +19,7 @@ public class AnagramsV2 {
         b = b.toUpperCase();
 
         int sum = 0;
-        for (char c = 'a'; c <= 'z'; c++) {
+        for (char c = 'A'; c <= 'Z'; c++) {
             for (int i = 0; i < a.length(); i++) {
                 if (a.charAt(i) == c) {
                     sum++;
@@ -29,9 +29,9 @@ public class AnagramsV2 {
                     sum--;
                 }
             }
-
+            if (sum != 0) return false;
         }
-        if (sum != 0) return false;
+
         return true;
     }
 }

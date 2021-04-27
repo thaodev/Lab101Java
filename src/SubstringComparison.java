@@ -14,10 +14,10 @@ public class SubstringComparison {
         String largest = currentString;
         for (int i = 1; i <= a.length() - k ; i++) {
             currentString = a.substring(i, i + k);
-            if(currentString.compareToIgnoreCase(smallest) < 0) {
+            if(smallest.compareToIgnoreCase(currentString) > 0) {
                 smallest = currentString;
             }
-            if(currentString.compareToIgnoreCase(largest) > 0) {
+            if(largest.compareToIgnoreCase(currentString) < 0) {
                 largest = currentString;
             }
         }
